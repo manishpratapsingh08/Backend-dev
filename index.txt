@@ -1,0 +1,33 @@
+// 1. Sync vs. Async
+// Synchronous: Blocks the code; moves to the next line only when the file task finishes.
+
+// Asynchronous: Non-blocking; starts the task and uses a callback/promise to finish later.
+
+// 2. When to use Streams
+// Use them for large files (GBs) or real-time data. They process data in tiny chunks so you don't crash your system by overloading the RAM.
+
+// 3. Purpose of 'utf8'
+// It’s a translator. Without it, you get raw binary data (Buffers). With it, those bits are converted into readable text (Strings).
+
+// 4. Common Error Codes
+// ENOENT: File not found.
+
+// EACCES: Permission denied.
+
+// EISDIR: Path is a folder, but you treated it like a file.
+
+// 5. Safe Directory Deletion
+// Use a recursive flag. This ensures the system deletes every file and sub-folder inside before removing the main directory itself.
+
+// 6. Piping
+// Piping is connecting a Source (readable) to a Destination (writable) directly.
+
+// Example: readStream.pipe(writeStream); — like a hose moving water from one bucket to another.
+
+// 7. Why Handle Errors?
+// Because file systems are external. Hardware can fail, permissions can change, or disks can get full. Handling errors prevents your entire app from crashing when these external issues occur.
+
+// 8. writeFile vs. appendFile
+// writeFile: Wipes the file clean and writes new data (overwrites).
+
+// appendFile: Leaves existing data alone and adds new data to the end.
