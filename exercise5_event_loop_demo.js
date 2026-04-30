@@ -1,0 +1,23 @@
+console.log('Start');
+
+setTimeout(() => {
+  console.log('setTimeout callback');
+}, 0);
+
+setImmediate(() => {
+  console.log('setImmediate callback');
+});
+
+process.nextTick(() => {
+  console.log('process.nextTick callback');
+});
+
+Promise.resolve()
+  .then(() => {
+    console.log('Promise.then callback');
+  })
+  .then(() => {
+    console.log('Promise second then callback');
+  });
+
+console.log('End');
